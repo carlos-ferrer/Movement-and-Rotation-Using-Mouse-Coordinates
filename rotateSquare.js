@@ -12,7 +12,8 @@ TODO
 
 
 
-let angle;
+let currentAngle = 0;
+let targetAngle = currentAngle;
 let x, y;
 let xs = 0;
 let ys = 0;
@@ -35,7 +36,7 @@ function draw() {
 	fill(255)
 	push();
 	translate(x, y);
-	rotate(angle);
+	rotate(currentAngle);
 	rect(0, 0, (width / scale) - scale, height / scale);
 	pop();
 	/*	push()
@@ -57,17 +58,12 @@ function draw() {
 */
 }
 
-function touchMoved() {
-		angle = (atan2(mouseY - cy, mouseX - cx) - 90);
-		angle += map(angle, -180, 180, 0, 360);
+function mouseDragged() {
+		targetAngle = round((atan2(mouseY - cy, mouseX - cx))) + 90;
+		currentAngle = targetAngle;
 		x += (mouseX - x) * 0.01;
 		y += (mouseY - y) * 0.01;
 }
-
-function touchStarted(){
-	return true;
-}
-
 /*	if (mouseX < width && mouseY < height){
 	print("x: "+ mouseX + "\ny: " + mouseY)
 	print("\n\nangle: " + angle);
