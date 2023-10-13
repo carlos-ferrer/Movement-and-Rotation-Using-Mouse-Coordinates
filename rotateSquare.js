@@ -28,7 +28,7 @@ function setup() {
 	x = cx;
 	y = cy;
 	angleMode(DEGREES);
-	rectMode(CENTER);
+	
 }
 
 function draw() {
