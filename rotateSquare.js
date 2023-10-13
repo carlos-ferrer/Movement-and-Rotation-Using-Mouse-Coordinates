@@ -9,9 +9,6 @@ TODO
 
 */
 
-
-
-
 let currentAngle = 0;
 let targetAngle = currentAngle;
 let x, y;
